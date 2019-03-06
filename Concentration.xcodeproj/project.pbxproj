@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BF37747222F8A2D00613E06 /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF37746222F8A2D00613E06 /* ViewController1.swift */; };
+		4BF37749222F8AB900613E06 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF37748222F8AB900613E06 /* Model.swift */; };
 		575649942224D1F30051BD7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575649932224D1F30051BD7F /* AppDelegate.swift */; };
 		575649962224D1F30051BD7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575649952224D1F30051BD7F /* ViewController.swift */; };
 		575649992224D1F30051BD7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575649972224D1F30051BD7F /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4BF37746222F8A2D00613E06 /* ViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
+		4BF37748222F8AB900613E06 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		575649902224D1F30051BD7F /* Concentration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Concentration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		575649932224D1F30051BD7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		575649952224D1F30051BD7F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +43,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4BF37745222F8A2100613E06 /* onevcat */ = {
+			isa = PBXGroup;
+			children = (
+				4BF37746222F8A2D00613E06 /* ViewController1.swift */,
+				4BF37748222F8AB900613E06 /* Model.swift */,
+			);
+			path = onevcat;
+			sourceTree = "<group>";
+		};
 		575649872224D1F30051BD7F = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +71,7 @@
 		575649922224D1F30051BD7F /* Concentration */ = {
 			isa = PBXGroup;
 			children = (
+				4BF37745222F8A2100613E06 /* onevcat */,
 				575649A522250FAE0051BD7F /* Concentration.swift */,
 				575649A7222510DC0051BD7F /* Card.swift */,
 				575649932224D1F30051BD7F /* AppDelegate.swift */,
@@ -142,6 +156,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				575649962224D1F30051BD7F /* ViewController.swift in Sources */,
+				4BF37749222F8AB900613E06 /* Model.swift in Sources */,
+				4BF37747222F8A2D00613E06 /* ViewController1.swift in Sources */,
 				575649942224D1F30051BD7F /* AppDelegate.swift in Sources */,
 				575649A622250FAE0051BD7F /* Concentration.swift in Sources */,
 				575649A8222510DC0051BD7F /* Card.swift in Sources */,
@@ -300,7 +316,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Concentration.hugh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -319,7 +335,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Concentration.hugh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
