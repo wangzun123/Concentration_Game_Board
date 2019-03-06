@@ -15,10 +15,16 @@ class ViewController: UIViewController {
     private lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
     
     var numberOfPairsOfCards: Int {
-        return (cardButtons.count + 1) / 2
+        // Use assert to make sure your initial state meets the assumption.
+        // This avoids your program from going to a wrong and unexpected state.
+        // Also check `precondition` and `fatalError` to see what's the differences between them.
+        assert(cardButtons.count % 2 == 0, "Card number should be even.")
+        return cardButtons.count / 2
     }
-    
-    private(set) var flipCount = 0{
+
+    // Please keep an space before the opening brace.
+    // It is very rare to have no space there in almost all coding style.
+    private(set) var flipCount = 0 {
         didSet{
             //flipCountLabel.text = "Flips: \(flipCount)"
             updateFlipCountLabel()
@@ -60,13 +66,13 @@ class ViewController: UIViewController {
     }
     
     private func flipAllCards(at state:Int){
-        if state == 1{
-            for index in cardButtons.indices{
+        if state == 1{ // Do not use number as the state. Please declare an enum for it and do a switch over the enum.
+            for index in cardButtons.indices{ // I suggest to just use `for button in cardButtons` instead. Loop an index is very rare in Swift.
                 let button = cardButtons[index]
                 //var card = game.cards[index]
                 //card.isMatched = false
                 button.isEnabled = true
-                button.setTitle("", for: UIControl.State.normal)
+                button.setTitle("", for: UIControl.State.normal) // You can just use `.normal` since Swift knows the type here.
                 button.backgroundColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)
                 //card.isFaceUp = false
             }
@@ -78,7 +84,7 @@ class ViewController: UIViewController {
                 button.setTitle("", for: UIControl.State.normal)
                 button.backgroundColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 0)
             }
-            flipCount = 16
+            flipCount = 16 // Maybe you need `cardButtons` for counting instead of hard coded.
         }
     }
     
@@ -113,7 +119,7 @@ class ViewController: UIViewController {
             let button = cardButtons[index]
             let card = game.cards[index]
             if button.backgroundColor == #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0){
-                count += 1
+                count += 1 // It is not clear what the `count` is. Please find a better name to describe your purpose.
                 print("Count: \(count)")
             }
             if card.isFaceUp{
@@ -129,13 +135,15 @@ class ViewController: UIViewController {
                     button.backgroundColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)
                 }
             }
-            if count == 14{
-                flipAllCards(at: 2)
+            if count == 14{ // If you use `numberOfPairsOfCards` to determine card game size, this would fail if the buttons count changes.
+                flipAllCards(at: 2) // This will set the `flipCount` to 16, which makes the labe show Flips: 16, regardless how many times I flipped.
                 popWindows()
             }
         }
     }
-    
+
+    // I think the emoji on the card should be a part of the Card model. And it would be much more clear if determined
+    // when you generate/reset the game.
 //    private var emojiChoices = ["👻","🎃","😈","💀","🤡","🤖","🦇","👽"]
     private var emojiChoices = "👻🎃😈💀🤡🤖🦇👽"
     var emoji = [Card:String]()

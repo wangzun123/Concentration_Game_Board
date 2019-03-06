@@ -43,7 +43,10 @@ struct Concentration{
             cards[index].isMatched = false
         }
     }
-    
+
+    // It is not a good implementation for shuffling. I am not sure about the logic here.
+    // But it seems maybe you can just call the shuffle method in Swift standard library?
+    // If you just want to randomize the index (order) of every card, maybe do `cards.shuffle()`.
     mutating func shuffle(){
         var temp = Card()
         var index = 0
@@ -98,7 +101,7 @@ struct Concentration{
             cards += [card, card]
         }
         
-        
+        // Please DRY, maybe juse call `shuffle()`?
         // TODO: Shuffle the cards
         var temp = Card()
         var index = 0
